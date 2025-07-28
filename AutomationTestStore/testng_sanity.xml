@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <groups>
+        <run>
+            <include name="sanity"></include>
+        </run>
+    </groups>
+    <test verbose="2" preserve-order="true" name="/Users/sudha/IdeaProjects/AutomationTestStore">
+        <classes>
+            <class name="orders.OrderTest">
+            </class>
+            <class name="orders.RegisterGuestTest">
+            </class>
+        </classes>
+    </test>
+</suite>

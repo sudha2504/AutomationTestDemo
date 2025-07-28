@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/Users/sudha/IdeaProjects/AutomationTestStore">
+        <classes>
+            <class name="orders.OrderTest">
+                <methods>
+                    <include name="test_order_complete"/>
+                    <include name="verify_order_details"/>
+                    <include name="test_modify_cart_order_complete"/>
+                    <include name="test_checkPrice"/>
+                </methods>
+            </class>
+            <class name="orders.RegisterGuestTest">
+                <methods>
+                    <include name="registerNewUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
