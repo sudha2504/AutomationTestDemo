@@ -6,8 +6,6 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.openqa.selenium.WebDriver;
 
-import java.sql.SQLOutput;
-
 public class PageListing {
 
     public PageListing(){

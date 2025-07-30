@@ -1,6 +1,9 @@
 package pages;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -9,7 +12,6 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
@@ -41,6 +43,15 @@ public class BaseTest {
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+    }
+
+    public String takeScreenshot(String testcaseName, WebDriver driver) throws IOException {
+
+        File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        String filepath = System.getProperty("user.dir") + "/reports/" + testcaseName + ".png";
+        FileUtils.copyFile(src, new File(filepath ));
+        return filepath;
 
     }
 
